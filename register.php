@@ -1,9 +1,5 @@
 <?php
 
-/**
-* Author : https://www.roytuts.com
-*/
-
 require_once 'db.php';
 
 header("Access-Control-Allow-Origin: *");

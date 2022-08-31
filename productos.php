@@ -1,6 +1,7 @@
 
 <?php
 
+
 require_once 'db.php';
 require_once 'jwt_utils.php';
 
@@ -14,7 +15,7 @@ $bearer_token = get_bearer_token();
 $is_jwt_valid = is_jwt_valid($bearer_token);
 
 if($is_jwt_valid) {
-	$sql = "SELECT username FROM user";
+	$sql = "SELECT * FROM productos";
 	$results = dbQuery($sql);
 
 	$rows = array();

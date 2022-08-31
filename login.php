@@ -1,9 +1,5 @@
 <?php
 
-/**
-* Author : https://www.roytuts.com
-*/
-
 require_once 'db.php';
 require_once 'jwt_utils.php';
 
@@ -26,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$username = $row['username'];
 		
 		$headers = array('alg'=>'HS256','typ'=>'JWT');
-		$payload = array('username'=>$username, 'exp'=>(time() + 60));
+		$payload = array('username'=>$username, 'exp'=>(time() + 36000));
 
 		$jwt = generate_jwt($headers, $payload);
 		
