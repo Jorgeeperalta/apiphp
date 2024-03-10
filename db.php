@@ -1,8 +1,17 @@
 <?php
 
+// Se recomienda utilizar variables de entorno para almacenar información sensible como las credenciales de la base de datos
+$host = 'localhost';
+$username = 'root';
+$password = 'root';
+$database = 'm_s_password';
 
-$dbConn = mysqli_connect('localhost','root','root','m_s_password') or die('MySQL connect failed. ' . mysqli_connect_error());
-//$dbConn = mysqli_connect('MYSQL5032.site4now.net','a47d48_lavalle','afm123**','db_a47d48_lavalle') or die('MySQL connect failed. ' . mysqli_connect_error());
+// Conexión a la base de datos utilizando el método orientado a objetos
+$dbConn = new mysqli($host, $username, $password, $database);
+
+if ($dbConn->connect_error) {
+    throw new Exception("MySQL connect failed: " . $dbConn->connect_error);
+}
 function dbQuery($sql) {
 	global $dbConn;
 	$result = mysqli_query($dbConn, $sql) or die(mysqli_error($dbConn));
