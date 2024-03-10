@@ -10,8 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	// get posted data
 	$data = json_decode(file_get_contents("php://input", true));
 	
-	$sql = "SELECT * FROM user WHERE username = '" . mysqli_real_escape_string($dbConn, $data->username) . "' AND password = '" . mysqli_real_escape_string($dbConn, $data->password) . "' LIMIT 1";
-	
+	//$sql = "SELECT * FROM user WHERE username = '" . mysqli_real_escape_string($dbConn, $data->username) . "' AND password = '" . mysqli_real_escape_string($dbConn, $data->password) . "' LIMIT 1";
+	$sql = "SELECT * FROM users WHERE email = '" . mysqli_real_escape_string($dbConn, $data->email) . "' AND password = '" . mysqli_real_escape_string($dbConn, $data->password) . "' LIMIT 1";
 	$result = dbQuery($sql);
 	
 	if(dbNumRows($result) < 1) {

@@ -15,7 +15,7 @@ $bearer_token = get_bearer_token();
 $is_jwt_valid = is_jwt_valid($bearer_token);
 
 if($is_jwt_valid) {
-	$sql = "SELECT * FROM productos";
+	$sql = "SELECT * FROM productsses";
 	$results = dbQuery($sql);
 
 	$rows = array();
