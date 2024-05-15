@@ -1,7 +1,7 @@
 <?php
 
 // Se recomienda utilizar variables de entorno para almacenar información sensible como las credenciales de la base de datos
-$host = 'localhost';
+$host =  getenv('HOST');
 $username = 'root';
 $password = 'root';
 $database = 'ejemplo';
