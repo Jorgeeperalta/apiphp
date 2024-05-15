@@ -4,7 +4,7 @@
 $host = 'localhost';
 $username = 'root';
 $password = 'root';
-$database = 'm_s_password';
+$database = 'ejemplo';
 
 // Conexión a la base de datos utilizando el método orientado a objetos
 $dbConn = new mysqli($host, $username, $password, $database);

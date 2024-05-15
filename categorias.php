@@ -35,7 +35,7 @@ $bearer_token = get_bearer_token();
 
 $is_jwt_valid = is_jwt_valid($bearer_token);
 
-if($is_jwt_valid) {
+// if($is_jwt_valid) {
 
 	if  ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$data = json_decode(file_get_contents("php://input", true));
@@ -107,8 +107,8 @@ if($is_jwt_valid) {
 				}
    }
 
-} else {
-	echo json_encode(array('error' => 'Access denied'));
-}
+// } else {
+// 	echo json_encode(array('error' => 'Access denied'));
+// }
 
 //End of file
